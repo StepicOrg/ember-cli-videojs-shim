@@ -30,10 +30,21 @@ module.exports = {
         }
       });
 
-      app.import({
-        development: path.join('vendor/video.js'),
-        production:  path.join('vendor/video.min.js')
-      });
+
+
+
+      if (options.outputFile) {
+        app.import({
+          development: path.join('vendor/video.js'),
+          production:  path.join('vendor/video.min.js')
+        });
+      } else {
+        const outputFile = options.outputFile
+        app.import({
+          development: path.join('vendor/video.js'),
+          production:  path.join('vendor/video.min.js')
+        }, {outputFile});
+      }
 
       (options.languages || []).forEach(function(language) {
         app.import(path.join('vendor/lang/' + language + '.js'));

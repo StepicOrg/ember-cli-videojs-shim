@@ -29,6 +29,15 @@ Video.js ships with a number of supported languages. To import languages add:
 ...
 ```
 
+Also you can set separate `outputFile` for:
+```javascript
+...
+    'videojs': {
+      'outputFile': 'vjs.js',
+    }
+...
+
+
 To your ember-cli-build.js file.
 
 ## License
