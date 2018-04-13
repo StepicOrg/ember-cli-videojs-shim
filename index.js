@@ -34,16 +34,16 @@ module.exports = {
 
 
       if (options.outputFile) {
-        app.import({
-          development: path.join('vendor/video.js'),
-          production:  path.join('vendor/video.min.js')
-        });
-      } else {
         const outputFile = options.outputFile
         app.import({
           development: path.join('vendor/video.js'),
           production:  path.join('vendor/video.min.js')
         }, {outputFile});
+      } else {
+        app.import({
+          development: path.join('vendor/video.js'),
+          production:  path.join('vendor/video.min.js')
+        });
       }
 
       (options.languages || []).forEach(function(language) {
